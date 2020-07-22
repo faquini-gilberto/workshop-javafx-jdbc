@@ -1,12 +1,15 @@
 package model.entities;
 
-public class Department {
-			
+import java.io.Serializable;
+
+public class Department implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	private Integer id;
-	private String name;
+	private String	name;
 	
 	public Department() {
-		
 	}
 
 	public Department(Integer id, String name) {
@@ -53,6 +56,11 @@ public class Department {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Department [id=" + id + ", name=" + name + "]";
 	}
 	
 	
